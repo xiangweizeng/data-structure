@@ -1,4 +1,4 @@
-site_name: My Docs
+site_name: 数据结构总结
 nav:
   - 1.线性表:
       - 1.1线性表: 1.1线性表.md
