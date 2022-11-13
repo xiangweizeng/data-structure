@@ -1,4 +1,6 @@
 site_name: 数据结构总结
+extra_css:
+- stylesheets/extra.css
 nav:
   - 1.线性表:
       - 1.1线性表: 1.1线性表.md
@@ -61,14 +63,36 @@ nav:
       - 8.9基数排序（稳定）: 8.9基数排序（稳定）.md
 
 theme: readthedocs
+theme:
+  name: material
+  features:
+  - navigation.indexes
+  - navigation.top
+  - header.shadow
+  - content.code.annotate
+  font:
+    text: Oswald
+    code: Roboto Mono
+  language: zh
+  palette:
+    primary: blue
 markdown_extensions:
-  - admonition
-  - pymdownx.highlight
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.tabbed
-  - def_list
-  - attr_list
-  - pymdownx.arithmatex
+- admonition
+- pymdownx.arithmatex
+- pymdownx.highlight:
+    anchor_linenums: true
+- pymdownx.inlinehilite
+- pymdownx.snippets
+- pymdownx.details
+- pymdownx.superfences
+- pymdownx.tabbed
+- def_list
+- attr_list
+- toc:
+    permalink: true
+# plugins:
+# - search
+# - mkpdfs:
+#    design: docs/stylesheets/report.css
+#    toc_title: 目录
+#    company: 数据结构
