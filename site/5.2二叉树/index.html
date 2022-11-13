@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>5.2二叉树 - My Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "5.2\u4e8c\u53c9\u6811";
+        var mkdocs_page_input_path = "5.2\u4e8c\u53c9\u6811.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> My Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">1.线性表</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../1.1%E7%BA%BF%E6%80%A7%E8%A1%A8/">1.1线性表</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1.2%E9%A1%BA%E5%BA%8F%E8%A1%A8%E2%80%94%E2%80%94%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8/">1.2顺序表——线性表的顺序存储</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1.3%E5%8D%95%E9%93%BE%E8%A1%A8%E2%80%94%E2%80%94%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8/">1.3单链表——线性表的链式存储</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1.4%E5%8F%8C%E9%93%BE%E8%A1%A8%E2%80%94%E2%80%94%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E6%94%B9%E8%BF%9B/">1.4双链表——单链表的改进</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1.5%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8%E2%80%94%E2%80%94%E5%8D%95%E5%8F%8C%E9%93%BE%E8%A1%A8%E7%9A%84%E6%94%B9%E8%BF%9B/">1.5循环链表——单双链表的改进</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1.6%E9%9D%99%E6%80%81%E9%93%BE%E8%A1%A8/">1.6静态链表</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">2.栈</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../2.1%E6%A0%88/">2.1栈</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2.2%E9%A1%BA%E5%BA%8F%E6%A0%88%E2%80%94%E2%80%94%E6%A0%88%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8/">2.2顺序栈——栈的顺序存储</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2.3%E9%93%BE%E6%A0%88%E2%80%94%E2%80%94%E6%A0%88%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8/">2.3链栈——栈的链式存储</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2.4%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8/">2.4栈的应用</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">3.队列</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../3.1%E9%98%9F%E5%88%97/">3.1队列</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3.2%E9%A1%BA%E5%BA%8F%E9%98%9F%E5%88%97%28%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%29%E2%80%94%E2%80%94%E9%98%9F%E5%88%97%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8/">3.2顺序队列(循环队列)——队列的顺序存储</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3.3%E9%93%BE%E9%98%9F%E5%88%97%E2%80%94%E2%80%94%E9%98%9F%E5%88%97%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8/">3.3链队列——队列的链式存储</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3.4%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97%E2%80%94%E2%80%94%E9%98%9F%E5%88%97%E7%9A%84%E6%94%B9%E8%BF%9B/">3.4双端队列——队列的改进</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3.5%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8/">3.5队列的应用</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3.6%E7%89%B9%E6%AE%8A%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8/">3.6特殊矩阵的压缩存储</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">4.串</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../4.1%E4%B8%B2/">4.1串</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4.2%E4%B8%B2%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/">4.2串的存储结构</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4.3%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/">4.3字符串模式匹配</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">5.树</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../5.1%E6%A0%91/">5.1树</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">5.2二叉树</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">一、二叉树的定义：</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">二、二叉树的五种状态</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">三、特殊的二叉树</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">四、二叉树的性质</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">五、存储结构</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_6">六、二叉树的顺序存储</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_7">二叉树的类型描述</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_8">初始化</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_9">七、二叉树的链式存储（二叉链表）</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_10">二叉树的类型表述</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_11">初始化（部分代码）</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#p">找结点p的父节点很难，解决：</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_12">八、二叉树的遍历</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_13">代码：（用二叉树的链式存储）</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_14">应用：</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_15">九、二叉树的层次遍历（层序遍历）</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_16">链队列</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_17">代码：（用二叉树的链式存储）</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_18">十、由遍历序列构造二叉树</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5.3%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91/">5.3线索二叉树</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5.4%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/">5.4树的存储结构</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5.5%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/">5.5二叉排序树</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5.6%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/">5.6平衡二叉树</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5.7%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/">5.7哈夫曼树</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">6.图</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../6.1%E5%9B%BE/">6.1图</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../6.2%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/">6.2图的存储结构</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../6.3%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">6.3图的基本操作</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../6.4%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%28BFS%E3%80%81DFS%29/">6.4图的遍历(BFS、DFS)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../6.5%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%28Prim%E7%AE%97%E6%B3%95%E3%80%81Kruskal%E7%AE%97%E6%B3%95%29/">6.5最小生成树(Prim算法、Kruskal算法)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../6.6%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%28BFS%E3%80%81Dijkstra%E7%AE%97%E6%B3%95%E3%80%81Floyd%E7%AE%97%E6%B3%95%29/">6.6最短路径(BFS、Dijkstra算法、Floyd算法)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../6.7%E6%9C%89%E5%90%91%E6%97%A0%E7%8E%AF%E5%9B%BE/">6.7有向无环图</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../6.8%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/">6.8拓扑排序</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../6.9%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/">6.9关键路径</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">7.查找</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../7.1%E6%9F%A5%E6%89%BE/">7.1查找</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../7.2%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE/">7.2顺序查找</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../7.3%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE/">7.3折半查找</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../7.4%E5%88%86%E5%9D%97%E6%9F%A5%E6%89%BE/">7.4分块查找</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../7.5B%E6%A0%91/">7.5B树</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../7.6B%2B%E6%A0%91/">7.6B+树</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../7.7%E6%95%A3%E5%88%97%E6%9F%A5%E6%89%BE%28%E5%93%88%E5%B8%8C%E6%9F%A5%E6%89%BE%29/">7.7散列查找(哈希查找)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">8.排序</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../8.1%E6%8E%92%E5%BA%8F/">8.1排序</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../8.2%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%EF%BC%88%E7%A8%B3%E5%AE%9A%EF%BC%89/">8.2插入排序（稳定）</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../8.3%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F%EF%BC%88%E4%B8%8D%E7%A8%B3%E5%AE%9A%EF%BC%89/">8.3希尔排序（不稳定）</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../8.4%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%EF%BC%88%E7%A8%B3%E5%AE%9A%EF%BC%89/">8.4冒泡排序（稳定）</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../8.5%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%EF%BC%88%E4%B8%8D%E7%A8%B3%E5%AE%9A%EF%BC%89/">8.5快速排序（不稳定）</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../8.6%E7%AE%80%E5%8D%95%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%EF%BC%88%E7%A8%B3%E5%AE%9A%EF%BC%89/">8.6简单选择排序（稳定）</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../8.7%E5%A0%86%E6%8E%92%E5%BA%8F%EF%BC%88%E4%B8%8D%E7%A8%B3%E5%AE%9A%EF%BC%89/">8.7堆排序（不稳定）</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../8.8%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%EF%BC%88%E7%A8%B3%E5%AE%9A%EF%BC%89/">8.8归并排序（稳定）</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../8.9%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F%EF%BC%88%E7%A8%B3%E5%AE%9A%EF%BC%89/">8.9基数排序（稳定）</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">My Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>5.树 &raquo;</li>
+      <li>5.2二叉树</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="binary-tree">二叉树 —— Binary Tree</h2>
+<h3 id="_1">一、二叉树的定义：</h3>
+<p><code>二叉树</code>是n(n≥0)个结点的有限集合
+①或者为空二叉树，即n=0。
+②或者由一个根结点和两个互不相交的被称为根的左子树和右子树组成。左子树和右子树又分别是一棵二叉树
+特点：①每个结点至多只有两棵子树 ②左右子树不能颠倒（二叉树是有序树）</p>
+<p><img alt="二叉树示意图" src="http://data.biancheng.net/uploads/allimg/181226/2-1Q226195I0M1.gif" /></p>
+<h3 id="_2">二、二叉树的五种状态</h3>
+<p><img alt="img" src="https://upload-images.jianshu.io/upload_images/10852306-cecc753794d38154.png?imageMogr2/auto-orient/strip|imageView2/2/w/337/format/webp" /></p>
+<h3 id="_3">三、特殊的二叉树</h3>
+<p><code>满二叉树</code>：一个二叉树，如果每一个层的结点数都达到最大值，则这个二叉树就是满二叉树。也就是说，如果一个二叉树的层数为K，且结点总数是(2^k) -1 ，则它就是满二叉树。</p>
+<p><code>特点</code>：
+①只有最后一层有叶子结点
+②不存在度为1的结点
+③按层序从1开始编号，结点i的左孩子为2i，右孩子为2+1；结点i的父节点为i/2向下取整（如果有的话）</p>
+<p><img alt="满二叉树示意图" src="http://data.biancheng.net/uploads/allimg/181226/2-1Q226195949495.gif" /></p>
+<p><code>完全二叉树</code>：当且仅当每个结点都与相同高度的满二叉树的编号一一对应</p>
+<p>特点：
+①只有最后两层可能有叶子结点
+②最多只有一个度为1的结点
+③按层序从1开始编号，结点i的左孩子为2i，右孩子为2+1；结点i的父节点为i/2向下取整（如果有的话）
+④i ≤ n/2向下取整为分支结点，i ≥ n/2向下取整为叶子结点</p>
+<p><img alt="完全二叉树示意图" src="http://data.biancheng.net/uploads/allimg/181226/2-1Q22620003J18.gif" /></p>
+<p><code>二叉排序树</code>：一棵二叉树或者是空二叉树，或者是具有如下性质的二叉树：左子树上所有结点的关键字均小于根结点的关键字；右子树上的所有结点的关键字均大于根结点的关键字。</p>
+<p><img alt="二叉排序树" src="https://bkimg.cdn.bcebos.com/pic/94cad1c8a786c9179df9bed6c93d70cf3ac75763?x-bce-process=image/resize,m_lfit,w_536,limit_1/format,f_jpg" /></p>
+<p><code>平衡二叉树</code>：树上任一结点的左子树和右子树的深度之差不超过1。</p>
+<p><img alt="img" src="https://img0.baidu.com/it/u=1329084275,842118972&amp;fm=26&amp;fmt=auto" /></p>
+<h3 id="_4">四、二叉树的性质</h3>
+<p>几个重要常考的基本操作：</p>
+<ul>
+<li>
+<p>i的左孩子——2i</p>
+</li>
+<li>
+<p>i的右孩子——2i+1</p>
+</li>
+<li>i的父节点——i/2向下取整</li>
+<li>i所在的层次 ——log2(n+1)向上取整 或 log2n向下取整+1</li>
+</ul>
+<p>若<code>完全二叉树</code>中共有n个结点（非完全二叉树不行），则</p>
+<ul>
+<li>判断i是否有左孩子？——2i≤n则有</li>
+<li>·判断是否有右孩子？——2i+1&lt;n则有</li>
+<li>判断i是否是叶子/分支结点？——i&gt;n/2向下取整是叶子结点，i&lt;n/2向下取整是分支结点</li>
+</ul>
+<h3 id="_5">五、存储结构</h3>
+<p><code>顺序存储</code>和<code>链式存储</code>，一般用链式存储</p>
+<h3 id="_6">六、二叉树的顺序存储</h3>
+<p>只适合存完全二叉树，普通二叉树会浪费很多空间</p>
+<h4 id="_7">二叉树的类型描述</h4>
+<div class="highlight"><pre><span></span><code><span class="cp">#define MaxSize 10</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">TreeNode</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Elemtype</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w">    </span><span class="c1">//结点中的数据元素</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">isEmpty</span><span class="p">;</span><span class="w">      </span><span class="c1">//结点是否为空</span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="n">TreeNode</span><span class="w"> </span><span class="n">t</span><span class="p">[</span><span class="n">MaxSize</span><span class="p">];</span><span class="w"></span>
+</code></pre></div>
+<h4 id="_8">初始化</h4>
+<div class="highlight"><pre><span></span><code><span class="c1">//初始化</span>
+<span class="kt">bool</span><span class="w"> </span><span class="nf">initBTree</span><span class="p">(</span><span class="n">TreeNode</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">MaxSize</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">isEmpty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="_9">七、二叉树的链式存储（二叉链表）</h3>
+<h4 id="_10">二叉树的类型表述</h4>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">TreeNode</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Elemtype</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w">                   </span><span class="c1">//数据域</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">BiTNode</span><span class="w"> </span><span class="o">*</span><span class="n">lchide</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">rchild</span><span class="p">;</span><span class="w"> </span><span class="c1">//左、右孩子指针</span>
+<span class="p">}</span><span class="n">BiTNode</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">BiTree</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p><code>注</code>：n个结点的二叉链表共有n+1个空链域</p>
+<p>因为n个结点，有n-1个有指向；2n个指针，则指向NULL的个数=2n-(n-1)=n+1</p>
+<h4 id="_11">初始化（部分代码）</h4>
+<div class="highlight"><pre><span></span><code><span class="c1">//数据域</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Elemtype</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="c1">//定义一颗空树</span>
+<span class="n">BiTree</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">//插入根结点</span>
+<span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">BiTree</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">BiTNode</span><span class="p">));</span><span class="w"></span>
+<span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">};</span><span class="w"></span>
+<span class="n">root</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
+<span class="n">root</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">//插入新结点</span>
+<span class="n">BiTNode</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">BiTNode</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">BiTNode</span><span class="p">));</span><span class="w"></span>
+<span class="n">p</span><span class="o">-&gt;</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">};</span><span class="w"></span>
+<span class="n">p</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
+<span class="n">p</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"></span>
+<span class="n">root</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w">   </span><span class="c1">//作为根结点的左孩子</span>
+</code></pre></div>
+<h4 id="p">找结点p的父节点很难，解决：</h4>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">TreeNode</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Elemtype</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w">                   </span><span class="c1">//数据域</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">BiTNode</span><span class="w"> </span><span class="o">*</span><span class="n">lchide</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">rchild</span><span class="p">;</span><span class="w"> </span><span class="c1">//左、右孩子指针</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">BiTNode</span><span class="w"> </span><span class="o">*</span><span class="n">parent</span><span class="p">;</span><span class="w">          </span><span class="c1">//父节点指针</span>
+<span class="p">}</span><span class="n">BiTNode</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">BiTree</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="_12">八、二叉树的遍历</h3>
+<p>先序遍历、中序遍历、后序遍历</p>
+<p><code>先序遍历</code>：根左右（NLR）</p>
+<p><code>中序遍历</code>：左根右（LNR）</p>
+<p><code>后序遍历</code>：左右根（LRN）</p>
+<h4 id="_13">代码：（用二叉树的链式存储）</h4>
+<p><img alt="img" src="https://pic2.zhimg.com/80/v2-55f42c78e51c0de9d1b942278ee1cfc1_720w.jpg" /></p>
+<p>先序遍历：每个结点都会被路过3次，第一次路过时访问结点</p>
+<p><code>空间复杂度</code>=O(h)</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//先序遍历</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">PreOrder</span><span class="p">(</span><span class="n">BiTree</span><span class="w"> </span><span class="n">T</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">T</span><span class="o">!=</span><span class="nb">NULL</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="n">visit</span><span class="p">(</span><span class="n">T</span><span class="p">);</span><span class="w">               </span><span class="c1">//访问根结点</span>
+<span class="w">        </span><span class="n">PreOrder</span><span class="p">(</span><span class="n">T</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="p">);</span><span class="w">    </span><span class="c1">//递归遍历左子树</span>
+<span class="w">        </span><span class="n">PreOrder</span><span class="p">(</span><span class="n">T</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="p">);</span><span class="w">    </span><span class="c1">//递归遍历右子树</span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>中序遍历：每个结点都会被路过3次，第二次路过时访问结点</p>
+<p><code>空间复杂度</code>=O(h)</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//中序遍历</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">InOrder</span><span class="p">(</span><span class="n">BiTree</span><span class="w"> </span><span class="n">T</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">T</span><span class="o">!=</span><span class="nb">NULL</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="n">InOrder</span><span class="p">(</span><span class="n">T</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="p">);</span><span class="w"> </span><span class="c1">//递归遍历左子树</span>
+<span class="w">        </span><span class="n">visit</span><span class="p">(</span><span class="n">T</span><span class="p">);</span><span class="w">               </span><span class="c1">//访问根结点</span>
+<span class="w">        </span><span class="n">InOrder</span><span class="p">(</span><span class="n">T</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="p">);</span><span class="w"> </span><span class="c1">//递归遍历右子树</span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>后序遍历：每个结点都会被路过3次，第三次路过时访问结点</p>
+<p><code>空间复杂度</code>=O(h)</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//后序遍历</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">PostOrder</span><span class="p">(</span><span class="n">BiTree</span><span class="w"> </span><span class="n">T</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">T</span><span class="o">!=</span><span class="nb">NULL</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="n">PostOrder</span><span class="p">(</span><span class="n">T</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="p">);</span><span class="w">   </span><span class="c1">//递归遍历左子树</span>
+<span class="w">        </span><span class="n">PostOrder</span><span class="p">(</span><span class="n">T</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="p">);</span><span class="w">   </span><span class="c1">//递归遍历右子树</span>
+<span class="w">        </span><span class="n">visit</span><span class="p">(</span><span class="n">T</span><span class="p">);</span><span class="w">               </span><span class="c1">//访问根结点</span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h4 id="_14">应用：</h4>
+<p>1.算数表达式的<code>分析树</code></p>
+<p><code>先序遍历</code>-&gt;前缀表达式</p>
+<p><code>中序遍历</code>-&gt;中缀表达式（需要加界限符）</p>
+<p><code>后序遍历</code>-&gt;后缀表达式</p>
+<p>2.求树的深度</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//求树的深度</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">treeDepth</span><span class="p">(</span><span class="n">BiTree</span><span class="w"> </span><span class="n">T</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">T</span><span class="o">!=</span><span class="nb">NULL</span><span class="p">){</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">treeDepth</span><span class="p">(</span><span class="n">T</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="p">);</span><span class="w">   </span><span class="c1">//左子树高度</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">treeDepth</span><span class="p">(</span><span class="n">T</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="p">);</span><span class="w">   </span><span class="c1">//右子树高度</span>
+<span class="w">        </span><span class="c1">//树的深度=Max（左子树深度，右子树深度）+1</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">l</span><span class="o">&gt;</span><span class="n">r</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">r</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="_15">九、二叉树的层次遍历（层序遍历）</h3>
+<p><img alt="img" src="https://pic4.zhimg.com/80/v2-e9eb296238feba1867dc2b7b6deec257_720w.jpg" /></p>
+<p>算法思想：
+①初始化一个辅助队列（链队列）
+②根结点入队
+③若队列非空，则队头结点出队，访问该结点并将其左、右孩子插入队尾(如果有的话)
+④重复③直至队列为空</p>
+<h4 id="_16">链队列</h4>
+<div class="highlight"><pre><span></span><code><span class="c1">//类型描述</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">LNode</span><span class="p">{</span><span class="w">    </span><span class="c1">//定义单链表结点类型</span>
+<span class="w">    </span><span class="n">ElemType</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w">            </span><span class="c1">//数据域，可以是别的各种数据类型，本文统一用int类型</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">LNode</span><span class="w"> </span><span class="o">*</span><span class="n">next</span><span class="p">;</span><span class="w">  </span><span class="c1">//指针域</span>
+<span class="p">}</span><span class="n">LNode</span><span class="p">;</span><span class="w"></span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">LNode</span><span class="w"> </span><span class="o">*</span><span class="n">front</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">rear</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="n">LinkQueue</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h4 id="_17">代码：（用二叉树的链式存储）</h4>
+<div class="highlight"><pre><span></span><code><span class="c1">//层次遍历</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">LevelOrder</span><span class="p">(</span><span class="n">BiTree</span><span class="w"> </span><span class="n">T</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="n">LinkQueue</span><span class="w"> </span><span class="n">Q</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">InitQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">BiTree</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w">    </span><span class="c1">//T为根结点，p也是根结点，保证根出队后可以指向孩子，因为T出队后，T-&gt;lchild无效</span>
+<span class="w">    </span><span class="n">EnQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="p">);</span><span class="w">        </span><span class="c1">//根结点入队</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">isEmpty</span><span class="p">(</span><span class="n">Q</span><span class="p">)){</span><span class="w">   </span><span class="c1">//队列不空则循环</span>
+<span class="w">        </span><span class="n">DeQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="p">);</span><span class="w">    </span><span class="c1">//根结点出队</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="o">!=</span><span class="nb">NULL</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="n">EnQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">lchild</span><span class="p">);</span><span class="w">        </span><span class="c1">//左结点入队</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="o">!=</span><span class="nb">NULL</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="n">EnQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">rchild</span><span class="p">);</span><span class="w">        </span><span class="c1">//右结点入队</span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="_18">十、由遍历序列构造二叉树</h3>
+<p>1.前序+中序遍历序列</p>
+<p>2.后序+中序遍历序列</p>
+<p>3.层序+中序遍历序列</p>
+<p>关键是有非中序确定根结点是谁，再将根结点代入中序得左右子树，依次类推。</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../5.1%E6%A0%91/" class="btn btn-neutral float-left" title="5.1树"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../5.3%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91/" class="btn btn-neutral float-right" title="5.3线索二叉树">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../5.1%E6%A0%91/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../5.3%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

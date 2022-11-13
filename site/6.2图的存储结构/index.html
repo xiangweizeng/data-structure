@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>6.2图的存储结构 - My Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "6.2\u56fe\u7684\u5b58\u50a8\u7ed3\u6784";
+        var mkdocs_page_input_path = "6.2\u56fe\u7684\u5b58\u50a8\u7ed3\u6784.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> My Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">1.线性表</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../1.1%E7%BA%BF%E6%80%A7%E8%A1%A8/">1.1线性表</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1.2%E9%A1%BA%E5%BA%8F%E8%A1%A8%E2%80%94%E2%80%94%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8/">1.2顺序表——线性表的顺序存储</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1.3%E5%8D%95%E9%93%BE%E8%A1%A8%E2%80%94%E2%80%94%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8/">1.3单链表——线性表的链式存储</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1.4%E5%8F%8C%E9%93%BE%E8%A1%A8%E2%80%94%E2%80%94%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E6%94%B9%E8%BF%9B/">1.4双链表——单链表的改进</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1.5%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8%E2%80%94%E2%80%94%E5%8D%95%E5%8F%8C%E9%93%BE%E8%A1%A8%E7%9A%84%E6%94%B9%E8%BF%9B/">1.5循环链表——单双链表的改进</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1.6%E9%9D%99%E6%80%81%E9%93%BE%E8%A1%A8/">1.6静态链表</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">2.栈</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../2.1%E6%A0%88/">2.1栈</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2.2%E9%A1%BA%E5%BA%8F%E6%A0%88%E2%80%94%E2%80%94%E6%A0%88%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8/">2.2顺序栈——栈的顺序存储</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2.3%E9%93%BE%E6%A0%88%E2%80%94%E2%80%94%E6%A0%88%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8/">2.3链栈——栈的链式存储</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2.4%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8/">2.4栈的应用</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">3.队列</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../3.1%E9%98%9F%E5%88%97/">3.1队列</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3.2%E9%A1%BA%E5%BA%8F%E9%98%9F%E5%88%97%28%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%29%E2%80%94%E2%80%94%E9%98%9F%E5%88%97%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8/">3.2顺序队列(循环队列)——队列的顺序存储</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3.3%E9%93%BE%E9%98%9F%E5%88%97%E2%80%94%E2%80%94%E9%98%9F%E5%88%97%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8/">3.3链队列——队列的链式存储</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3.4%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97%E2%80%94%E2%80%94%E9%98%9F%E5%88%97%E7%9A%84%E6%94%B9%E8%BF%9B/">3.4双端队列——队列的改进</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3.5%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8/">3.5队列的应用</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../3.6%E7%89%B9%E6%AE%8A%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8/">3.6特殊矩阵的压缩存储</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">4.串</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../4.1%E4%B8%B2/">4.1串</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4.2%E4%B8%B2%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/">4.2串的存储结构</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../4.3%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/">4.3字符串模式匹配</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">5.树</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../5.1%E6%A0%91/">5.1树</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5.2%E4%BA%8C%E5%8F%89%E6%A0%91/">5.2二叉树</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5.3%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91/">5.3线索二叉树</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5.4%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/">5.4树的存储结构</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5.5%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/">5.5二叉排序树</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5.6%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/">5.6平衡二叉树</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5.7%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/">5.7哈夫曼树</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">6.图</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../6.1%E5%9B%BE/">6.1图</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">6.2图的存储结构</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_2">一、图的存储结构</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">二、邻接矩阵法</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#11">1.1普通图的领接矩阵法：</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#12">1.2普通图的度、入度、出度</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2">2.带权图的领接矩阵法</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">三、邻接表法</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">图的类型描述：</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_6">四、十字链表法</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_7">五、邻接多重表</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../6.3%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">6.3图的基本操作</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../6.4%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%28BFS%E3%80%81DFS%29/">6.4图的遍历(BFS、DFS)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../6.5%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%28Prim%E7%AE%97%E6%B3%95%E3%80%81Kruskal%E7%AE%97%E6%B3%95%29/">6.5最小生成树(Prim算法、Kruskal算法)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../6.6%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%28BFS%E3%80%81Dijkstra%E7%AE%97%E6%B3%95%E3%80%81Floyd%E7%AE%97%E6%B3%95%29/">6.6最短路径(BFS、Dijkstra算法、Floyd算法)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../6.7%E6%9C%89%E5%90%91%E6%97%A0%E7%8E%AF%E5%9B%BE/">6.7有向无环图</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../6.8%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/">6.8拓扑排序</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../6.9%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/">6.9关键路径</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">7.查找</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../7.1%E6%9F%A5%E6%89%BE/">7.1查找</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../7.2%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE/">7.2顺序查找</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../7.3%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE/">7.3折半查找</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../7.4%E5%88%86%E5%9D%97%E6%9F%A5%E6%89%BE/">7.4分块查找</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../7.5B%E6%A0%91/">7.5B树</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../7.6B%2B%E6%A0%91/">7.6B+树</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../7.7%E6%95%A3%E5%88%97%E6%9F%A5%E6%89%BE%28%E5%93%88%E5%B8%8C%E6%9F%A5%E6%89%BE%29/">7.7散列查找(哈希查找)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">8.排序</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../8.1%E6%8E%92%E5%BA%8F/">8.1排序</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../8.2%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%EF%BC%88%E7%A8%B3%E5%AE%9A%EF%BC%89/">8.2插入排序（稳定）</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../8.3%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F%EF%BC%88%E4%B8%8D%E7%A8%B3%E5%AE%9A%EF%BC%89/">8.3希尔排序（不稳定）</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../8.4%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%EF%BC%88%E7%A8%B3%E5%AE%9A%EF%BC%89/">8.4冒泡排序（稳定）</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../8.5%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%EF%BC%88%E4%B8%8D%E7%A8%B3%E5%AE%9A%EF%BC%89/">8.5快速排序（不稳定）</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../8.6%E7%AE%80%E5%8D%95%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%EF%BC%88%E7%A8%B3%E5%AE%9A%EF%BC%89/">8.6简单选择排序（稳定）</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../8.7%E5%A0%86%E6%8E%92%E5%BA%8F%EF%BC%88%E4%B8%8D%E7%A8%B3%E5%AE%9A%EF%BC%89/">8.7堆排序（不稳定）</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../8.8%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%EF%BC%88%E7%A8%B3%E5%AE%9A%EF%BC%89/">8.8归并排序（稳定）</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../8.9%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F%EF%BC%88%E7%A8%B3%E5%AE%9A%EF%BC%89/">8.9基数排序（稳定）</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">My Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>6.图 &raquo;</li>
+      <li>6.2图的存储结构</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="_1">图的存储结构</h2>
+<h3 id="_2">一、图的存储结构</h3>
+<p>①领接矩阵：顺序存储（一维数组存点的数据，二维数组存边的连接情况）(存储无向图、有向图)
+②邻接表：顺序+链式存储（顺序存点的数据，链存连接该点的边）（存储有向图、无向图）
+③十字链表：链式存储（存储有向图）
+④邻接多重表：链式存储（存储无向图）</p>
+<p><img alt="1637936258196" src="../images/1637936258196.png" /></p>
+<h3 id="_3">二、邻接矩阵法</h3>
+<p><code>空间复杂度</code>=<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">O(|V|^2)</span><script type="math/tex">O(|V|^2)</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">O(|V|^2)</span><script type="math/tex">O(|V|^2)</script></span></script></span>，<code>适合存稠密图</code></p>
+<p><code>无向图的邻接矩阵</code>是<code>对称矩阵</code>，可以<code>压缩存储</code>，见3.6</p>
+<p><code>性质</code>：<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span></script></span>为图<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span></script></span>的邻接矩阵，则<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">A^n</span><script type="math/tex">A^n</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">A^n</span><script type="math/tex">A^n</script></span></script></span>的元素<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">A^n[i][j]</span><script type="math/tex">A^n[i][j]</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">A^n[i][j]</span><script type="math/tex">A^n[i][j]</script></span></script></span>=<code>顶点i到顶点j的长度为n的路径的数目</code></p>
+<p><code>计算度、入度、出度</code>：必须遍历对应的行或列。
+<code>找相邻的边</code>：必须遍历对应的行或列。</p>
+<h4 id="11">1.1普通图的领接矩阵法：</h4>
+<p><img alt="1637846244394" src="../images/1637846244394.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define MaxVertexNum 100                 </span><span class="c1">//顶点数目最大值</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">Vex</span><span class="p">[</span><span class="n">MaxVertexNum</span><span class="p">];</span><span class="w">              </span><span class="c1">//顶点表：存每个点的数据</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Edge</span><span class="p">[</span><span class="n">MaxVertexNum</span><span class="p">][</span><span class="n">MaxVertexNum</span><span class="p">];</span><span class="c1">//邻接矩阵，边表：存边的连接情况</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">vexnum</span><span class="p">,</span><span class="w"> </span><span class="n">arcnum</span><span class="p">;</span><span class="w">                  </span><span class="c1">//图当前的顶点数和边数（弧数）</span>
+<span class="p">}</span><span class="n">MGraph</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<p>边可以是int，bool或枚举型变量。</p>
+<h4 id="12">1.2普通图的度、入度、出度</h4>
+<p>某点的度：某点的边数</p>
+<p>无向图：
+<code>第i个结点的度</code>=<code>第i行(第i列)</code>的<code>非零元素</code>个数。</p>
+<p>有向图：
+<code>第i个结点的出度</code>=<code>第i行</code>的<code>非零元素</code>个数。
+<code>第i个结点的入度</code>=<code>第i列</code>的<code>非零元素</code>个数。
+<code>第i个结点的度</code>=<code>第i行、第i列</code>的<code>非零元素</code>个数<code>之和</code>。</p>
+<p>求顶点的度、入度、出度的<code>时间复杂度</code>=O(<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">|V|</span><script type="math/tex">|V|</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">|V|</span><script type="math/tex">|V|</script></span></script></span>)</p>
+<h4 id="2">2.带权图的领接矩阵法</h4>
+<p><img alt="1637848061168" src="../images/1637848061168.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define MaxVertexNum 100                 </span><span class="c1">//顶点数目最大值</span>
+<span class="cp">#define INFINITY 4294967295              </span><span class="c1">//宏定义常量“无穷”，4294967295为最大的int值</span>
+<span class="k">typedef</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">VertexType</span><span class="p">;</span><span class="w">                 </span><span class="c1">//顶点的数据类型</span>
+<span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">EdgeType</span><span class="p">;</span><span class="w">                    </span><span class="c1">//边的数据类型</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">VertexType</span><span class="w"> </span><span class="n">Vex</span><span class="p">[</span><span class="n">MaxVertexNum</span><span class="p">];</span><span class="w">        </span><span class="c1">//顶点表：存每个点的数据</span>
+<span class="w">    </span><span class="n">EdgeType</span><span class="w"> </span><span class="n">Edge</span><span class="p">[</span><span class="n">MaxVertexNum</span><span class="p">][</span><span class="n">MaxVertexNum</span><span class="p">];</span><span class="c1">//邻接矩阵，边表：存边的连接情况</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">vexnum</span><span class="p">,</span><span class="w"> </span><span class="n">arcnum</span><span class="p">;</span><span class="w">                  </span><span class="c1">//图当前的顶点数和边数（弧数）</span>
+<span class="p">}</span><span class="n">MGraph</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="_4">三、邻接表法</h3>
+<p><code>空间复杂度</code>：无向图为<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">O(|V|+2|E|)</span><script type="math/tex">O(|V|+2|E|)</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">O(|V|+2|E|)</span><script type="math/tex">O(|V|+2|E|)</script></span></script></span>，有向图为<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">O(|V|+|E|)</span><script type="math/tex">O(|V|+|E|)</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">O(|V|+|E|)</span><script type="math/tex">O(|V|+|E|)</script></span></script></span>，<code>适合存稀疏图</code>
+<code>表示方式不唯一</code></p>
+<p>邻接矩阵降低了空间复杂度，但使操作不方便了：
+<code>计算度、入度、出度</code>：计算有向图的度、入度不方便，其余很方便。
+<code>找相邻的边</code>：找有向图的入边不方便。</p>
+<h4 id="_5">图的类型描述：</h4>
+<p>与树的孩子表示法很像</p>
+<p><img alt="1637934445539" src="../images/1637934445539.jpg" /></p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define MaxVertexNum 100       </span><span class="c1">//顶点数目最大值</span>
+<span class="c1">//&quot;边（弧）&quot;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">ArcNode</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">adjvex</span><span class="p">;</span><span class="w">                </span><span class="c1">//边（弧）指向那个结点</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">ArcNode</span><span class="w"> </span><span class="o">*</span><span class="n">next</span><span class="p">;</span><span class="w">      </span><span class="c1">//指向下一条弧的指针</span>
+<span class="w">    </span><span class="c1">//InfoType info;           //边权值</span>
+<span class="p">}</span><span class="n">ArcNode</span><span class="p">;</span><span class="w"></span>
+<span class="c1">//&quot;顶点&quot;</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">VNode</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">VertexType</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w">           </span><span class="c1">//顶点数据</span>
+<span class="w">    </span><span class="n">ArcNode</span><span class="w"> </span><span class="o">*</span><span class="n">first</span><span class="p">;</span><span class="w">            </span><span class="c1">//顶点指向的第一条边</span>
+<span class="p">}</span><span class="n">VNode</span><span class="p">,</span><span class="w"> </span><span class="n">AdjList</span><span class="p">[</span><span class="n">MaxVertexNum</span><span class="p">];</span><span class="w"></span>
+<span class="c1">//用领接表存储图</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">AdjList</span><span class="w"> </span><span class="n">vertices</span><span class="p">;</span><span class="w">          </span><span class="c1">//顶点数组</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">vernum</span><span class="p">,</span><span class="w"> </span><span class="n">arcnum</span><span class="p">;</span><span class="w">        </span><span class="c1">////图当前的顶点数和边数（弧数）</span>
+<span class="p">}</span><span class="n">ALGraph</span><span class="p">;</span><span class="w"></span>
+</code></pre></div>
+<h3 id="_6">四、十字链表法</h3>
+<p><code>空间复杂度</code>：<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">O(|V|+|E|)</span><script type="math/tex">O(|V|+|E|)</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">O(|V|+|E|)</span><script type="math/tex">O(|V|+|E|)</script></span></script></span>，与邻接表法一样</p>
+<p>解决了邻接表法的找入边难的问题。</p>
+<p><img alt="1637936499284" src="../images/1637936499284.png" /></p>
+<h3 id="_7">五、邻接多重表</h3>
+<p><code>空间复杂度</code>：<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">O(|V|+|E|)</span><script type="math/tex">O(|V|+|E|)</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">O(|V|+|E|)</span><script type="math/tex">O(|V|+|E|)</script></span></script></span>，比邻接表法的<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">O(|V|+2|E|)</span><script type="math/tex">O(|V|+2|E|)</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">O(|V|+2|E|)</span><script type="math/tex">O(|V|+2|E|)</script></span></script></span>好</p>
+<p>解决了邻接表法存两遍边的空间浪费。</p>
+<p>删除边、删除结点等操作很方便。</p>
+<p><img alt="1637936777739" src="../images/1637936777739.png" /></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../6.1%E5%9B%BE/" class="btn btn-neutral float-left" title="6.1图"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../6.3%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="btn btn-neutral float-right" title="6.3图的基本操作">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../6.1%E5%9B%BE/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../6.3%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
