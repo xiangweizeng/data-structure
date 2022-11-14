@@ -5,7 +5,7 @@
 MkPDFs for MkDocs is a plugin for [MkDocs][1], a nice static site generator
 designed for project documentation.
 
-[![MkPDFs for MkDocs](assets/images/mkpdfs.png)](assets/images/mkpdfs.png)
+[![MkPDFs for MkDocs](assets/../images/mkpdfs.png)](assets/../images/mkpdfs.png)
 
 
 What makes this plugin different to other MkDocs pdf generator plugins, is that it's not dependent to a given plugin and may work with absolutely any MkDocs theme.
