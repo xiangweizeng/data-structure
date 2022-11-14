@@ -70,9 +70,9 @@ theme:
   - navigation.top
   - header.shadow
   - content.code.annotate
-  font:
-    text: Oswald
-    code: Roboto Mono
+#   font:
+#     text: Oswald
+#     code: Roboto Mono
   language: zh
   palette:
     primary: blue
