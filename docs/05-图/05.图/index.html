@@ -1,0 +1,2679 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>5.图 - 数据结构总结</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#5" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="数据结构总结" class="md-header__button md-logo" aria-label="数据结构总结" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            数据结构总结
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5.图
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../00-%E7%BB%AA%E8%AE%BA/0.%E7%BB%AA%E8%AE%BA/" class="md-tabs__link">
+        知识精要
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../00-%E7%BB%AA%E8%AE%BA/00.%E7%BB%AA%E8%AE%BA/" class="md-tabs__link md-tabs__link--active">
+        核心考点
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="数据结构总结" class="md-nav__button md-logo" aria-label="数据结构总结" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    数据结构总结
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          知识精要
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="知识精要" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          知识精要
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-%E7%BB%AA%E8%AE%BA/0.%E7%BB%AA%E8%AE%BA/" class="md-nav__link">
+        0.绪论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" type="checkbox" id="__nav_1_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1_2">
+          1.线性表
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="1.线性表" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          1.线性表
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-%E7%BA%BF%E6%80%A7%E8%A1%A8/1.1%E7%BA%BF%E6%80%A7%E8%A1%A8/" class="md-nav__link">
+        1.1线性表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-%E7%BA%BF%E6%80%A7%E8%A1%A8/1.2%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%A4%BA/" class="md-nav__link">
+        1.2线性表的顺序存储
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-%E7%BA%BF%E6%80%A7%E8%A1%A8/1.3%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8/" class="md-nav__link">
+        1.3线性表的链式存储
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-%E7%BA%BF%E6%80%A7%E8%A1%A8/1.4%E5%8F%8C%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        1.4双链表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-%E7%BA%BF%E6%80%A7%E8%A1%A8/1.5%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        1.5循环链表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-%E7%BA%BF%E6%80%A7%E8%A1%A8/1.6%E9%9D%99%E6%80%81%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        1.6静态链表
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" type="checkbox" id="__nav_1_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1_3">
+          2.栈和队列
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2.栈和队列" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          2.栈和队列
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/2.1%E6%A0%88/" class="md-nav__link">
+        2.1栈
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/2.2%E6%A0%88%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8/" class="md-nav__link">
+        2.2栈的顺序存储
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/2.3%E6%A0%88%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8/" class="md-nav__link">
+        2.3栈的链式存储
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/2.4%E9%98%9F%E5%88%97/" class="md-nav__link">
+        2.4队列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/2.5%E9%98%9F%E5%88%97%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8/" class="md-nav__link">
+        2.5队列的顺序存储
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/2.6%E9%98%9F%E5%88%97%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8/" class="md-nav__link">
+        2.6队列的链式存储
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/2.7%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97/" class="md-nav__link">
+        2.7双端队列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/2.8%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8/" class="md-nav__link">
+        2.8栈和队列的应用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/2.9%E7%89%B9%E6%AE%8A%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8/" class="md-nav__link">
+        2.9特殊矩阵的压缩存储
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1_4">
+          3.串
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="3.串" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          3.串
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-%E4%B8%B2/3.1%E4%B8%B2/" class="md-nav__link">
+        3.1串
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-%E4%B8%B2/3.2%E4%B8%B2%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        3.2串的存储结构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-%E4%B8%B2/3.3%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/" class="md-nav__link">
+        3.3字符串模式匹配
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" type="checkbox" id="__nav_1_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1_5">
+          4.树
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="4.树" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          4.树
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-%E6%A0%91/4.1%E6%A0%91/" class="md-nav__link">
+        4.1树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-%E6%A0%91/4.2%E4%BA%8C%E5%8F%89%E6%A0%91/" class="md-nav__link">
+        4.2二叉树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-%E6%A0%91/4.3%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91/" class="md-nav__link">
+        4.3线索二叉树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-%E6%A0%91/4.4%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        4.4树的存储结构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-%E6%A0%91/4.5%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/" class="md-nav__link">
+        4.5二叉排序树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-%E6%A0%91/4.6%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/" class="md-nav__link">
+        4.6平衡二叉树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-%E6%A0%91/4.7%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/" class="md-nav__link">
+        4.7哈夫曼树
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_6" type="checkbox" id="__nav_1_6" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1_6">
+          5.图
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="5.图" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          5.图
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.1%E5%9B%BE/" class="md-nav__link">
+        5.1图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.2%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        5.2图的存储结构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.3%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+        5.3图的基本操作
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.4%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%28BFS%E3%80%81DFS%29/" class="md-nav__link">
+        5.4图的遍历(BFS、DFS)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.5%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" class="md-nav__link">
+        5.5最小生成树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.6%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/" class="md-nav__link">
+        5.6最短路径
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.7%E6%9C%89%E5%90%91%E6%97%A0%E7%8E%AF%E5%9B%BE/" class="md-nav__link">
+        5.7有向无环图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.8%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        5.8拓扑排序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.9%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84/" class="md-nav__link">
+        5.9关键路径
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_7" type="checkbox" id="__nav_1_7" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1_7">
+          6.查找
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="6.查找" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_7">
+          <span class="md-nav__icon md-icon"></span>
+          6.查找
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-%E6%9F%A5%E6%89%BE/6.1%E6%9F%A5%E6%89%BE/" class="md-nav__link">
+        6.1查找
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-%E6%9F%A5%E6%89%BE/6.2%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE/" class="md-nav__link">
+        6.2顺序查找
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-%E6%9F%A5%E6%89%BE/6.3%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE/" class="md-nav__link">
+        6.3折半查找
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-%E6%9F%A5%E6%89%BE/6.4%E5%88%86%E5%9D%97%E6%9F%A5%E6%89%BE/" class="md-nav__link">
+        6.4分块查找
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-%E6%9F%A5%E6%89%BE/6.5B%E6%A0%91/" class="md-nav__link">
+        6.5B树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-%E6%9F%A5%E6%89%BE/6.6B%2B%E6%A0%91/" class="md-nav__link">
+        6.6B+树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-%E6%9F%A5%E6%89%BE/6.7%E6%95%A3%E5%88%97%E6%9F%A5%E6%89%BE%28%E5%93%88%E5%B8%8C%E6%9F%A5%E6%89%BE%29/" class="md-nav__link">
+        6.7散列查找(哈希查找)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_8" type="checkbox" id="__nav_1_8" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1_8">
+          7.排序
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="7.排序" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_8">
+          <span class="md-nav__icon md-icon"></span>
+          7.排序
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-%E6%8E%92%E5%BA%8F/7.1%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        7.1排序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-%E6%8E%92%E5%BA%8F/7.2%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%EF%BC%88%E7%A8%B3%E5%AE%9A%EF%BC%89/" class="md-nav__link">
+        7.2插入排序（稳定）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-%E6%8E%92%E5%BA%8F/7.3%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F%EF%BC%88%E4%B8%8D%E7%A8%B3%E5%AE%9A%EF%BC%89/" class="md-nav__link">
+        7.3希尔排序（不稳定）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-%E6%8E%92%E5%BA%8F/7.4%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%EF%BC%88%E7%A8%B3%E5%AE%9A%EF%BC%89/" class="md-nav__link">
+        7.4冒泡排序（稳定）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-%E6%8E%92%E5%BA%8F/7.5%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%EF%BC%88%E4%B8%8D%E7%A8%B3%E5%AE%9A%EF%BC%89/" class="md-nav__link">
+        7.5快速排序（不稳定）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-%E6%8E%92%E5%BA%8F/7.6%E7%AE%80%E5%8D%95%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%EF%BC%88%E4%B8%8D%E7%A8%B3%E5%AE%9A%EF%BC%89/" class="md-nav__link">
+        7.6简单选择排序（不稳定）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-%E6%8E%92%E5%BA%8F/7.7%E5%A0%86%E6%8E%92%E5%BA%8F%EF%BC%88%E4%B8%8D%E7%A8%B3%E5%AE%9A%EF%BC%89/" class="md-nav__link">
+        7.7堆排序（不稳定）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-%E6%8E%92%E5%BA%8F/7.8%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%EF%BC%88%E7%A8%B3%E5%AE%9A%EF%BC%89/" class="md-nav__link">
+        7.8归并排序（稳定）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-%E6%8E%92%E5%BA%8F/7.9%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F%EF%BC%88%E7%A8%B3%E5%AE%9A%EF%BC%89/" class="md-nav__link">
+        7.9基数排序（稳定）
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          核心考点
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="核心考点" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          核心考点
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-%E7%BB%AA%E8%AE%BA/00.%E7%BB%AA%E8%AE%BA/" class="md-nav__link">
+        0.绪论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-%E7%BA%BF%E6%80%A7%E8%A1%A8/01.%E7%BA%BF%E6%80%A7%E8%A1%A8/" class="md-nav__link">
+        1.线性表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/02.%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" class="md-nav__link">
+        2.栈和队列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-%E4%B8%B2/03.%E4%B8%B2/" class="md-nav__link">
+        3.串
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-%E6%A0%91/04.%E6%A0%91/" class="md-nav__link">
+        4.树和二叉树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          5.图
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        5.图
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    5.1 图的基本概念
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 图的基本概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511" class="md-nav__link">
+    5.1.1 图的定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512" class="md-nav__link">
+    5.1.2 基本术语
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    5.2 图的存储及基本操作
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 图的存储及基本操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#521" class="md-nav__link">
+    5.2.1 邻接矩阵法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#522" class="md-nav__link">
+    5.2.2 邻接表法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#523" class="md-nav__link">
+    5.2.3 十字链表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#524" class="md-nav__link">
+    5.2.4 邻接多重表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#525" class="md-nav__link">
+    5.2.5 图的基本操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    5.3 图的遍历
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 图的遍历">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#531" class="md-nav__link">
+    5.3.1 广度优先算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#532" class="md-nav__link">
+    5.3.2 深度优先搜索
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    性能
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    5.4 图的应用
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4 图的应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#541" class="md-nav__link">
+    5.4.1 最小生成树
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4.1 最小生成树">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prim" class="md-nav__link">
+    Prim 算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kruskal" class="md-nav__link">
+    Kruskal 算法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#542" class="md-nav__link">
+    5.4.2 最短路径
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4.2 最短路径">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dijkstra" class="md-nav__link">
+    Dijkstra 算法求单源最短路径
+  </a>
+  
+    <nav class="md-nav" aria-label="Dijkstra 算法求单源最短路径">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    辅助数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    算法步骤
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    案例：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floyd" class="md-nav__link">
+    Floyd 算法求个定点之间最短路径
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#543" class="md-nav__link">
+    5.4.3 有向无环图描述表达式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#544" class="md-nav__link">
+    5.4.4 拓扑排序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#545" class="md-nav__link">
+    5.4.5 关键路径
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4.5 关键路径">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    计算步骤
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    5.1 图的基本概念
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 图的基本概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511" class="md-nav__link">
+    5.1.1 图的定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512" class="md-nav__link">
+    5.1.2 基本术语
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    5.2 图的存储及基本操作
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 图的存储及基本操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#521" class="md-nav__link">
+    5.2.1 邻接矩阵法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#522" class="md-nav__link">
+    5.2.2 邻接表法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#523" class="md-nav__link">
+    5.2.3 十字链表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#524" class="md-nav__link">
+    5.2.4 邻接多重表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#525" class="md-nav__link">
+    5.2.5 图的基本操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    5.3 图的遍历
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 图的遍历">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#531" class="md-nav__link">
+    5.3.1 广度优先算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#532" class="md-nav__link">
+    5.3.2 深度优先搜索
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    性能
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    5.4 图的应用
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4 图的应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#541" class="md-nav__link">
+    5.4.1 最小生成树
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4.1 最小生成树">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prim" class="md-nav__link">
+    Prim 算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kruskal" class="md-nav__link">
+    Kruskal 算法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#542" class="md-nav__link">
+    5.4.2 最短路径
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4.2 最短路径">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dijkstra" class="md-nav__link">
+    Dijkstra 算法求单源最短路径
+  </a>
+  
+    <nav class="md-nav" aria-label="Dijkstra 算法求单源最短路径">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    辅助数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    算法步骤
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    案例：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floyd" class="md-nav__link">
+    Floyd 算法求个定点之间最短路径
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#543" class="md-nav__link">
+    5.4.3 有向无环图描述表达式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#544" class="md-nav__link">
+    5.4.4 拓扑排序
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#545" class="md-nav__link">
+    5.4.5 关键路径
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4.5 关键路径">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    计算步骤
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="5">5. 图<a class="headerlink" href="#5" title="Permanent link">&para;</a></h1>
+<h2 id="51">5.1 图的基本概念<a class="headerlink" href="#51" title="Permanent link">&para;</a></h2>
+<h3 id="511">5.1.1 图的定义<a class="headerlink" href="#511" title="Permanent link">&para;</a></h3>
+<p>图 <span class="arithmatex">\(G\)</span>由顶点集 <span class="arithmatex">\(V\)</span>和边集 <span class="arithmatex">\(E\)</span>组成，记为 
+<span class="arithmatex">\(G=(V,E)\)</span>, 其中 <span class="arithmatex">\(V(G)\)</span>表示图 <span class="arithmatex">\(G\)</span>中顶点的有限非空集； <span class="arithmatex">\(E(G)\)</span>表示图 <span class="arithmatex">\(G\)</span>中顶点之间的关系<a href="https://so.csdn.net/so/search?q=%E9%9B%86%E5%90%88&amp;spm=1001.2101.3001.7020">集合</a>。</p>
+<ul>
+<li><span class="arithmatex">\(V=\{v_1,v_2,...,v_n\}\)</span>, <span class="arithmatex">\(|V|\)</span>表示顶点个数</li>
+<li><span class="arithmatex">\(E=\{(u,v)|u \in V,v\in V\}\)</span>, <span class="arithmatex">\(|E|\)</span>表示图 <span class="arithmatex">\(G\)</span> 中边的条数</li>
+</ul>
+<h3 id="512">5.1.2 基本术语<a class="headerlink" href="#512" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../images/20210309161600771.png" /></p>
+<ul>
+<li>有向图</li>
+<li>无向图</li>
+<li>简单图、多重图</li>
+<li>完全图</li>
+<li>子图</li>
+<li>连通、连通图和连通分量</li>
+<li>强连通图、强连通分量</li>
+<li>生成树、生成森林</li>
+<li>顶点的度、入度和出度</li>
+<li>边的权和网</li>
+<li>稠密图、稀疏图</li>
+<li>路径、路径长度和回路</li>
+<li>简单路径、简单回路</li>
+<li>距离</li>
+<li>有向树</li>
+</ul>
+<h2 id="52">5.2 图的存储及基本操作<a class="headerlink" href="#52" title="Permanent link">&para;</a></h2>
+<ul>
+<li>必须完整、准确地反映顶点集合边集的信息</li>
+</ul>
+<h3 id="521">5.2.1 邻接矩阵法<a class="headerlink" href="#521" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../images/20210309174041355.png" /></p>
+<ul>
+<li>一个一维数组存储图中顶点的信息</li>
+<li>一个二维数组存储图中边的信息，称为<strong>邻接矩阵</strong></li>
+<li>设图 <span class="arithmatex">\(G\)</span>的邻接矩阵为 <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(A^n\)</span> 的元素等于从顶点 i 到 j 的长度为 n 的路径数目</li>
+</ul>
+<h3 id="522">5.2.2 邻接表法<a class="headerlink" href="#522" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../images/20210414215342883.png" /></p>
+<ul>
+<li>顶点表结点</li>
+</ul>
+<p>边表的头指针和顶点的数据信息采用顺序存储</p>
+<table>
+<thead>
+<tr>
+<th>顶点域</th>
+<th>边表头指针</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td><code>firstarc</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>边表结点</li>
+</ul>
+<p>对每个顶点 <span class="arithmatex">\(v_i\)</span>​建立一个单链表，第 <span class="arithmatex">\(i\)</span>个单链表中的结点表示依附于顶点 <span class="arithmatex">\(v_i\)</span>​的边，这个单链表为顶点 <span class="arithmatex">\(v_i\)</span>​的<strong>边表</strong></p>
+<table>
+<thead>
+<tr>
+<th>邻接点域</th>
+<th>指针域</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>adjvex</code></td>
+<td><code>nextarc</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>若存储的是无向图, 空间复杂度为 <span class="arithmatex">\(O(|V|+2|E|)\)</span>；若为有向图，空间复杂度为 <span class="arithmatex">\(O(|V|+|E|)\)</span></li>
+</ul>
+<h3 id="523">5.2.3 十字链表<a class="headerlink" href="#523" title="Permanent link">&para;</a></h3>
+<ul>
+<li>有向图的一种链式存储结构</li>
+<li>对应于有向图中的每条弧有一个结点，对应于每个顶点也有一个结点</li>
+</ul>
+<p><img alt="" src="../../images/2-1FH010305Y06.png" />
+<img alt="" src="../../images/v2-71e203ce285e52c56741ae13cbd90e78_r.jpg" /></p>
+<ul>
+<li>弧结点</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>尾域</th>
+<th>头域</th>
+<th>链域-&gt;弧头相同的下一条弧</th>
+<th>链域-&gt;弧尾相同的下一条弧</th>
+<th>弧信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tailvex</code></td>
+<td><code>headvex</code></td>
+<td><code>hlink</code></td>
+<td><code>tlink</code></td>
+<td><code>info</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>顶点结点</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>数据</th>
+<th>第一条出弧</th>
+<th>第一条入弧</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td><code>firstin</code></td>
+<td><code>firstout</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="524">5.2.4 邻接多重表<a class="headerlink" href="#524" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../images/v2-a4db40f270e4526e2f93d215fd54ac3b_r.jpg" />
+* 无向图的链式存储结构
+* 与邻接表的区别是，同一条边在邻接多重表中只有一个结点</p>
+<ul>
+<li>边结点</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>标志域</th>
+<th>依附的结点</th>
+<th>下一条依附于ivex的边</th>
+<th>依附的结点</th>
+<th>下一条依附于jvex的边</th>
+<th>边信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mark</code></td>
+<td><code>ivex</code></td>
+<td><code>ilink</code></td>
+<td><code>jvex</code></td>
+<td><code>jlink</code></td>
+<td><code>info</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>顶点结点</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>数据</th>
+<th>第一条依附于该顶点的边</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td><code>firstedge</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="525">5.2.5 图的基本操作<a class="headerlink" href="#525" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Adjacent</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">:</span><span class="n">判断图G是否存在边</span><span class="o">&lt;</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">&gt;</span><span class="w"></span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">Neighbors</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">:</span><span class="n">列出图G中与结点x邻接对的边</span><span class="w"></span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">InsertVertex</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">:</span><span class="n">在图G中插入顶点x</span><span class="w"></span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">DeleteVertex</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">:</span><span class="n">从图G中删除顶点x</span><span class="w"></span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">AddEdge</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">:</span><span class="n">若边</span><span class="o">&lt;</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">&gt;</span><span class="n">不存在</span><span class="err">，</span><span class="n">则向图G中添加该边</span><span class="w"></span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">RemoveEdge</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">:</span><span class="n">若边</span><span class="o">&lt;</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">&gt;</span><span class="n">存在</span><span class="err">，</span><span class="n">则从图G中删除该边</span><span class="w"></span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">FirstNeighbor</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">:</span><span class="n">求图G中顶点x的第一个邻接点</span><span class="err">，</span><span class="n">若有则返回顶点号</span><span class="err">。</span><span class="n">否则返回</span><span class="mi">-1</span><span class="w"></span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">NextNeighbor</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">:</span><span class="n">假设图G中顶点y是顶点x的一个邻接点</span><span class="err">，</span><span class="n">返回除y外顶点x的下一个邻接点的顶点号</span><span class="err">，</span><span class="n">若没有返回</span><span class="mi">-1</span><span class="w"></span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">Get_edge_value</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">:</span><span class="n">获取图G中边</span><span class="o">&lt;</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">&gt;</span><span class="n">的权值</span><span class="w"></span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">Set_edge_value</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">v</span><span class="p">)</span><span class="o">:</span><span class="n">设置图G中边</span><span class="o">&lt;</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">&gt;</span><span class="n">对应的权值为v</span><span class="w"></span>
+</code></pre></div>
+<h2 id="53">5.3 图的遍历<a class="headerlink" href="#53" title="Permanent link">&para;</a></h2>
+<p>图的遍历是从图中某一顶点出发，按照某种搜索方法沿着图中的对边对图中所有顶点访问且只访问一次。</p>
+<h3 id="531">5.3.1 广度优先算法<a class="headerlink" href="#531" title="Permanent link">&para;</a></h3>
+<p><code>Breadth-Frist-Search,BFS</code></p>
+<ul>
+<li>基本思想</li>
+</ul>
+<p>首先访问起始顶点 <span class="arithmatex">\(v\)</span>, 接着由 <span class="arithmatex">\(v\)</span>出发，依次访问 <span class="arithmatex">\(v\)</span> 的各个未访问过的邻接顶点 <span class="arithmatex">\(w_1,w_2,...,w_i\)</span>​, 然后一次访问<span class="arithmatex">\(w_1,w_2,...,w_i\)</span> ​的所有未被访问的邻接顶点。</p>
+<p>换句话说，<code>BFS</code>是以<code>v</code>为起始点，由近及远依次访问和<code>v</code>有路径相通且路径长度为 1,2,… 的顶点</p>
+<p><img alt="" src="../../images/v2-9b9fe810f9437a5490378151c164b648_r.jpg" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">visited</span><span class="p">[</span><span class="n">MAX_VERTEX_NUM</span><span class="p">];</span><span class="c1">//访问标记数组</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">BFSTraverse</span><span class="p">(</span><span class="n">Graph</span><span class="w"> </span><span class="n">G</span><span class="p">){</span><span class="w">    </span><span class="c1">//对图G进行广度优先遍历</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">G</span><span class="p">.</span><span class="n">vexnum</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="n">visited</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FALSE</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="n">InitQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">G</span><span class="p">.</span><span class="n">vexnum</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">visited</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w">        </span><span class="c1">//对每个连通分量调用一次BFS</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">            </span><span class="n">BFS</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">i</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="kt">void</span><span class="w"> </span><span class="nf">BFS</span><span class="p">(</span><span class="n">Graph</span><span class="w"> </span><span class="n">G</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">){</span><span class="c1">//从顶点v出发，广度优先遍历图G</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="n">visit</span><span class="p">(</span><span class="n">v</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="n">visited</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TRUE</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="n">EnQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">v</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">isEmpty</span><span class="p">(</span><span class="n">Q</span><span class="p">)){</span><span class="w"></span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">        </span><span class="n">DeQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">v</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="n">FirstNeighbor</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">v</span><span class="p">);</span><span class="n">w</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="n">w</span><span class="o">=</span><span class="n">Neighbor</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">w</span><span class="p">))</span><span class="w"></span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">visited</span><span class="p">[</span><span class="n">w</span><span class="p">]){</span><span class="w"></span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">                </span><span class="n">visit</span><span class="p">(</span><span class="n">w</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">                </span><span class="n">visited</span><span class="p">[</span><span class="n">w</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TRUE</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">                </span><span class="n">EnQueue</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">w</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">            </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="532">5.3.2 深度优先搜索<a class="headerlink" href="#532" title="Permanent link">&para;</a></h3>
+<p><code>Depth-First-Search,DFS</code></p>
+<ul>
+<li>基本思想</li>
+</ul>
+<p>首先访问图中某一起始顶点 <span class="arithmatex">\(v\)</span>, 然后由 <span class="arithmatex">\(v\)</span>出发，访问与 <span class="arithmatex">\(v\)</span> 邻接且未被访问的任一顶点 <span class="arithmatex">\(w_1\)</span>​, 再访问与 <span class="arithmatex">\(w_1\)</span>​邻接且未被访问的任一顶点，重复上述过程</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">visited</span><span class="p">[</span><span class="n">MAX_VERTEX_NUM</span><span class="p">];</span><span class="w"></span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">DFSTraverse</span><span class="p">(</span><span class="n">Graph</span><span class="w"> </span><span class="n">G</span><span class="p">){</span><span class="w"></span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">v</span><span class="o">&lt;</span><span class="n">G</span><span class="p">.</span><span class="n">vexnum</span><span class="p">;</span><span class="o">++</span><span class="n">v</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="n">visited</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FALSE</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">v</span><span class="o">&lt;</span><span class="n">G</span><span class="p">.</span><span class="n">vexnum</span><span class="p">;</span><span class="o">++</span><span class="n">v</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">visited</span><span class="p">[</span><span class="n">v</span><span class="p">])</span><span class="w"></span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">            </span><span class="n">DFS</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">v</span><span class="p">);</span><span class="w">        </span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="kt">void</span><span class="w"> </span><span class="nf">DFS</span><span class="p">(</span><span class="n">Graph</span><span class="w"> </span><span class="n">G</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">){</span><span class="w"></span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="n">visit</span><span class="p">(</span><span class="n">v</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="n">visited</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TRUE</span><span class="p">;</span><span class="w"></span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="n">FirstNeighbor</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">v</span><span class="p">);</span><span class="n">w</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="n">w</span><span class="o">=</span><span class="n">NextNeighbor</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">w</span><span class="p">))</span><span class="w"></span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">visited</span><span class="p">[</span><span class="n">w</span><span class="p">]){</span><span class="w"></span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">            </span><span class="n">DFS</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">w</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">        </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="_1">性能<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>性能</th>
+<th>广度优先搜索</th>
+<th>深度优先搜索</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>空间复杂度</td>
+<td><span class="arithmatex">\(O(\|V\|)\)</span></td>
+<td><span class="arithmatex">\(O(\|V\|)\)</span></td>
+</tr>
+<tr>
+<td>时间复杂度-邻接矩阵</td>
+<td><span class="arithmatex">\(O(\|V\|^2)\)</span></td>
+<td><span class="arithmatex">\(O(\|V\|^2)\)</span></td>
+</tr>
+<tr>
+<td>时间复杂度-邻接表</td>
+<td><span class="arithmatex">\(O(\|V\| + \|E\|)\)</span></td>
+<td><span class="arithmatex">\(O(\|V\| + \|E\|)\)</span></td>
+</tr>
+<tr>
+<td>生成树</td>
+<td>生成树，邻接表不唯一，邻接矩阵唯一</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="54">5.4 图的应用<a class="headerlink" href="#54" title="Permanent link">&para;</a></h2>
+<h3 id="541">5.4.1 最小生成树<a class="headerlink" href="#541" title="Permanent link">&para;</a></h3>
+<p>求一个带权连通图的最小生成树<code>Minimum-Spanning-Tree,MST</code></p>
+<h4 id="prim">Prim 算法<a class="headerlink" href="#prim" title="Permanent link">&para;</a></h4>
+<ul>
+<li>基本思想
+  <img alt="" src="../../images/v2-3e7e4f6a9393cd87e50691ff9674e50c_r.jpg" /></li>
+<li>
+<p>初始时从图中任取一顶点加入树 T, 此时树中只含有一个顶点</p>
+</li>
+<li>
+<p>之后选择一个与当前 T 中<strong>顶点集合</strong>距离最近的顶点，且加入后不能出现环，并将该顶点和相应的边加入 T，每次操作后 T 中的顶点数和边数都增 1。</p>
+</li>
+<li>
+<p>重复直到加满</p>
+</li>
+<li>
+<p>时间复杂度： <span class="arithmatex">\(O(|V|^2)\)</span></p>
+</li>
+</ul>
+<p><img alt="" src="../../images/v2-d5f88f830a01559f01c47168c7ce8326_r.jpg" /></p>
+<p>最终可能的结果：
+<img alt="" src="../../images/v2-dcbb7b3c956bab47af9d9898aa767366_r.jpg" /></p>
+<h4 id="kruskal">Kruskal 算法<a class="headerlink" href="#kruskal" title="Permanent link">&para;</a></h4>
+<p>基本思想</p>
+<ul>
+<li>初始时为只有 n 个顶点而无边的非连通图 T，每个顶点自成一个连通分量</li>
+<li>按照边的权值由小到大，加入到非连通图 T 中，不能形成环</li>
+<li>重复直到加满</li>
+<li>时间复杂度： <span class="arithmatex">\(O(|E|log|E|)\)</span>，每轮判断是否属于同一个集合，需要  <span class="arithmatex">\(O(log|E|)\)</span></li>
+</ul>
+<p><img alt="" src="../../images/v2-d014a0bb409aa2d5d3a62608b40a7e7f_b.jpg" /></p>
+<p>Prim算法时间复杂度：<span class="arithmatex">\(O(|V|^2)\)</span>  适合用于边稠密图</p>
+<p>Kruskal算法时间复杂度： <span class="arithmatex">\(O(|E|log|E|)\)</span>  适合用于边稀疏图</p>
+<h3 id="542">5.4.2 最短路径<a class="headerlink" href="#542" title="Permanent link">&para;</a></h3>
+<h4 id="dijkstra">Dijkstra 算法求单源最短路径<a class="headerlink" href="#dijkstra" title="Permanent link">&para;</a></h4>
+<h5 id="_2">辅助数组<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h5>
+<ul>
+<li>集合<code>S</code>：记录以求得的最短路径的顶点</li>
+<li><code>dist[]</code>：记录从源点 <span class="arithmatex">\(v_0\)</span>​到其他各顶点当前的最短路径长度</li>
+<li><code>path[]</code>：<code>path[i]</code>表示从源点到顶点 i 之间的最短路径的前驱结点。可用于回溯找最短路径</li>
+</ul>
+<h5 id="_3">算法步骤<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h5>
+<ol>
+<li>
+<p>初始化：集合<code>S</code>初始化为<code>{0}</code>,<code>dist[]</code>的初始值<code>dist[i]=arcs[0][i]</code></p>
+</li>
+<li>
+<p>从顶点集合<code>V-S</code>中选出 <span class="arithmatex">\(v_j\)</span>​, 满足 <span class="arithmatex">\(dist[j]=Min\{dist[i] \ |v_i \in V-S\}\)</span>, 令<span class="arithmatex">\(S=S\cup\{j\}\)</span></p>
+</li>
+<li>
+<p>根据公式修改从 <span class="arithmatex">\(v_0\)</span>​出发到集合 V-S 上任一顶点 <span class="arithmatex">\(v_k\)</span> 可达的最短路径长度,若<code>dist[j]+arcs[j][k]&lt;dist[k]</code>, 则更新</p>
+</li>
+<li>
+<p>重复步骤 2-3 操作共<code>n-1</code>次</p>
+</li>
+<li>
+<p>时间复杂度： <span class="arithmatex">\(O(|V|^2)\)</span></p>
+</li>
+<li>注意:Dijkstra 算法不适用于有负权值的带权图</li>
+</ol>
+<h5 id="_4">案例：<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h5>
+<ul>
+<li>
+<p>初始：从<span class="arithmatex">\(V_i\)</span>开始，初始化三个数组信息如下
+<img alt="" src="../../images/v2-e277db3ec26a797fd288aa8e009fdc3f_r.jpg" /></p>
+</li>
+<li>
+<p>第 1 轮：循环遍历所有结点，找到还没确定最短路径，且 dist 最小的顶点<span class="arithmatex">\(V_i\)</span>，令 final[i] = ture
+<img alt="" src="../../images/v2-459788fef793c835d40f59cd5586abee_r.jpg" />
+检查所有邻接自<span class="arithmatex">\(V_i\)</span>的顶点，若其 final 值为 false，则更新 dist 和 path 信息
+<img alt="" src="../../images/v2-6a351cad7f222884ebf52b8c0aba2bb6_r.jpg" /></p>
+</li>
+<li>
+<p>第 2 轮：循环遍历所有结点，找到还没确定最短路径，且 dist 最小的顶点<span class="arithmatex">\(V_i\)</span>，令 final[i] = ture
+<img alt="" src="../../images/v2-d75e12c3f19a5cc56938dd829e37f019_r.jpg" />
+检查所有邻接自<span class="arithmatex">\(V_i\)</span>的顶点，若其 final 值为 false，则更新 dist 和 path 信息
+<img alt="" src="../../images/v2-d62624155e4e838820efc56f1bdcf104_b.jpg" /></p>
+</li>
+<li>
+<p>第 3 轮：循环遍历所有结点，找到还没确定最短路径，且 dist 最小的顶点<span class="arithmatex">\(V_i\)</span>，令 final[i] = ture
+<img alt="" src="../../images/v2-9c9c3a89a28247c89f34d18f55b66f3c_r.jpg" />
+检查所有邻接自<span class="arithmatex">\(V_i\)</span>的顶点，若其 final 值为 false，则更新 dist 和 path 信息
+<img alt="" src="../../images/v2-2194e70cbd083f29a0d17d32f6b1cfcd_b.jpg" /></p>
+</li>
+<li>
+<p>第 4 轮：循环遍历所有结点，找到还没确定最短路径，且 dist 最小的顶点<span class="arithmatex">\(V_i\)</span> ，令 final[i] = ture
+<img alt="" src="../../images/v2-d5fca76865716e5a65f61337c25633d5_r.jpg" />
+因为找不到其他顶点了，也不用更新了，算法结束</p>
+</li>
+<li>
+<p>结果: </p>
+<ul>
+<li><span class="arithmatex">\(V_0\)</span>到<span class="arithmatex">\(v_2\)</span>的最短（带权）路径长度为：dist[2] = 9</li>
+<li>通过 path[] 可知，<span class="arithmatex">\(V_0\)</span>到 <span class="arithmatex">\(V_2\)</span>的最短（带权）路径： <span class="arithmatex">\(V_2\)</span> &lt;- <span class="arithmatex">\(V_4\)</span> &lt;- <span class="arithmatex">\(V_1\)</span>  &lt;- <span class="arithmatex">\(V_0\)</span></li>
+</ul>
+</li>
+</ul>
+<h4 id="floyd">Floyd 算法求个定点之间最短路径<a class="headerlink" href="#floyd" title="Permanent link">&para;</a></h4>
+<p>算法描述</p>
+<ul>
+<li>
+<p>定义一个 n 阶方阵 <span class="arithmatex">\(A^{(-1)}，A^{(0)}，...,A^{(n-1)}\)</span>, 其中 <span class="arithmatex">\(A^{(-1)}[i][j]=arcs[i][j],\)</span></p>
+</li>
+<li>
+<p>根据递推公式重复<code>n</code>次，计算出 <span class="arithmatex">\(A^{(0)}，...,A^{(n-1)}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(A^{(k)}[i][j]=Min\{A^{(k-1)}[i][j],A^{(k-1)}[i][k]+A^{(k-1)}[k][j]\},k=0,1,..,n-1\)</span>
+    其中，</p>
+<ul>
+<li><span class="arithmatex">\(A^{(0)}[i][j]\)</span>是从顶点 <span class="arithmatex">\(v_i\)</span> 到 <span class="arithmatex">\(v_j\)</span>​、中间路径是 <span class="arithmatex">\(v_0\)</span>​的最短路径的长度</li>
+<li><span class="arithmatex">\(A^{(k)}[i][j]\)</span> 是从顶点 <span class="arithmatex">\(v_i\)</span>​到 <span class="arithmatex">\(v_j\)</span>​、中间顶点的序号不大于 k 的最短路径的长度</li>
+</ul>
+</li>
+<li>
+<p>时间复杂度 <span class="arithmatex">\(O(|V|^3)\)</span></p>
+</li>
+</ul>
+<p>案例：</p>
+<ul>
+<li>
+<p>初始：不允许在其他顶点中转，最短路径如下，path = -1 表示没有中转点
+<img alt="" src="../../images/v2-a398b44588f84a64861dd7b0d7ba9361_b.jpg" /></p>
+</li>
+<li>
+<p>第一步：允许在<span class="arithmatex">\(V_0\)</span>中转，最短路径是<span class="arithmatex">\(A^{(0)}\)</span>，在<span class="arithmatex">\(path^{(0)}\)</span>中记录中转的点<span class="arithmatex">\(V_2\)</span>到<span class="arithmatex">\(V_1\)</span>之间没有直接通路，但是能经过<span class="arithmatex">\(V_0\)</span>中转的话， <span class="arithmatex">\(V_2\)</span>到<span class="arithmatex">\(V_1\)</span>之间的距离从 ∞ 变为 11,公式化是，
+<img alt="" src="../../images/v2-abba795f1e12d043de4aa595e146f0b4_r.jpg" />
+其中上述<span class="arithmatex">\(V_0\)</span>在中转后从无穷大变为 11 的路径被找到了： 
+<span class="arithmatex">\(A^{(-1)}[2][1] \gt A^{(-1)}[2][0] +  A^{(-1)}[0][1]=11\)</span>,修改矩阵的值为 <span class="arithmatex">\(A^{(0)}[2][1]=11,path^{(0)}[2][1]=0\)</span>：<br />
+<img alt="" src="../../images/v2-d7e1c254942ef052e4112a3ca6944e62_r.jpg" /></p>
+</li>
+<li>
+<p>第二步：允许在  <span class="arithmatex">\(V_0\)</span>、<span class="arithmatex">\(V_1\)</span> 中转，求<span class="arithmatex">\(A^{(1)}\)</span>和 <span class="arithmatex">\(path^{(1)}\)</span>, 继续根据公式
+<img alt="" src="../../images/v2-c2c1488397b0b0291cce560ad53a43d1_b.jpg" />
+找到了：
+<img alt="" src="../../images/v2-08e8995bf7d7bf85fcd2a266a6f6d6b7_b.png" />
+<img alt="" src="../../images/v2-c0e6ecd9075f3668d2084ae987f9d5cf_b.jpg" /></p>
+</li>
+<li>
+<p>第三步：允许在  <span class="arithmatex">\(V_0\)</span>、<span class="arithmatex">\(V_1\)</span> 、<span class="arithmatex">\(V_2\)</span>  中转，求<span class="arithmatex">\(A^{(2)}\)</span>和 <span class="arithmatex">\(path^{(2)}\)</span> ,找到了
+<img alt="" src="../../images/v2-55f33681af4d597a43abcf0bb1851d5e_r.png" />
+<img alt="" src="../../images/v2-189fdc7c3740b0bde3cab19e4a52a339_b.jpg" /></p>
+</li>
+<li>
+<p>根据  可知，<span class="arithmatex">\(V_1\)</span> 到 <span class="arithmatex">\(V_2\)</span> 最短路径长度为 4，根据  可知，完整路径信息为 <span class="arithmatex">\(V_1-V_2\)</span></p>
+</li>
+<li>
+<p>根据  可知，<span class="arithmatex">\(V_0\)</span> 到 <span class="arithmatex">\(V_2\)</span> 最短路径长度为 10，根据  可知，完整路径信息为 <span class="arithmatex">\(V_0-V_1-V_2\)</span></p>
+</li>
+<li>
+<p>根据  可知，<span class="arithmatex">\(V_1\)</span> 到 <span class="arithmatex">\(V_0\)</span> 最短路径长度为 9，根据  可知，完整路径信息为 <span class="arithmatex">\(V_1-V_2-V_0\)</span></p>
+</li>
+</ul>
+<h3 id="543">5.4.3 有向无环图描述表达式<a class="headerlink" href="#543" title="Permanent link">&para;</a></h3>
+<p>有向无环图<code>DAG</code></p>
+<p>有向无环图是描述含有公共子式的表达式的有效工具，可实现对相同子式的共享，从而节省存储空间</p>
+<h3 id="544">5.4.4 拓扑排序<a class="headerlink" href="#544" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>AOV网</code></li>
+</ul>
+<p>若用<code>AVG</code>表示一个工程，其顶点表示活动，用有向边 <span class="arithmatex">\(&lt;V_i,V_j&gt;\)</span> 表示活动 <span class="arithmatex">\(V_i\)</span> ​必须先于活动 <span class="arithmatex">\(V_j\)</span> ​进行的这样一种关系，则将这种有向图称为<strong>顶点表示活动的网络</strong></p>
+<ul>
+<li>
+<p>拓扑排序：在图论中，由一个有向无环图的顶点组成的序列，当且仅当满足下列条件时，称为该图的一个拓扑排序</p>
+<ul>
+<li>每个顶点出现且只出现一次</li>
+<li>若顶点<code>A</code>在序列中排在顶点 B 的前面，则在图中不存在从顶点 B 到顶点 A 的路径</li>
+</ul>
+</li>
+<li>
+<p>拓扑排序算法</p>
+<ol>
+<li>从<code>AOV</code>网中选择一个没有前驱的顶点并输出</li>
+<li>从网中删除该顶点和所有以它为起点的有向边</li>
+<li>重复 1-2，直到当前<code>AOV</code>网为空</li>
+</ol>
+</li>
+<li>
+<p>时间复杂度 <span class="arithmatex">\(O(|V|+|E|)\)</span>,采用邻接矩阵时间复杂度 <span class="arithmatex">\(O(|V|^2)\)</span></p>
+</li>
+<li>
+<p>逆拓扑排序</p>
+<ol>
+<li>从<code>AOV</code>网中选择一个没有后继的顶点并输出</li>
+<li>从网中删除该顶点和所有以它为重点的有向边</li>
+<li>重复 1-2 直到<code>AOV</code>为空</li>
+</ol>
+</li>
+<li>
+<p>案例：
+<img alt="" src="../../images/v2-72625858f7a6c5b09c05e136665cb838_r.jpg" />
+<img alt="" src="../../images/v2-c8cb97c38afd30d70eeff5e7f0805da9_r.jpg" />
+<img alt="" src="../../images/v2-478f7d47e7ecf4a2f2c42b705e25f835_r.jpg" /></p>
+</li>
+</ul>
+<h3 id="545">5.4.5 关键路径<a class="headerlink" href="#545" title="Permanent link">&para;</a></h3>
+<p>在带权有向图中，以顶点表示事件，以有向边表示活动，以边上的权值表示完成该活动的开销，称之为<strong>用边表示活动的网络</strong>，简称<code>AOE网</code></p>
+<p><img alt="" src="../../images/v2-21a577c594a72044dca81ae088cb12ff_r.jpg" /></p>
+<ul>
+<li>
+<p><code>AOE网</code>中仅有一个入度为 0 的顶点，称为开始顶点（源点）；只存在一个出度为 0 的顶点，称之为结束顶点（汇点）</p>
+</li>
+<li>
+<p>具有最大路径长度的路径称为<strong>关键路径</strong>，而把关键路径上的活动称为<strong>关键活动</strong></p>
+</li>
+<li>
+<p>关键路径并不唯一，只提高其中一条关键路径上的关键活动速度不能缩短整个工程的工期。</p>
+</li>
+</ul>
+<p>重要概念：</p>
+<ul>
+<li><strong>事件<span class="arithmatex">\(v_i\)</span>的最迟发生时间 <span class="arithmatex">\(v(k)\)</span></strong>:它是指在不推迟整个工程完成的前提下，该事件最迟必须发生的时间（紫色标注）</li>
+<li><strong>活动 <span class="arithmatex">\(a_i\)</span> 的最迟开始时间 <span class="arithmatex">\(l(i)\)</span></strong>：它是指该活动弧的终点所表示事件的最迟发生时间与该活动所需时间之差（绿色标注）</li>
+</ul>
+<p><img alt="" src="../../images/v2-f43bff7a99a3af2806d5b526e6b3d27c_b.jpg" /></p>
+<ul>
+<li><strong>活动 <span class="arithmatex">\(a_i\)</span> 的最早开始时间 <span class="arithmatex">\(e(i)\)</span></strong>：指该活动弧的起点所表示的事件的最早发生时间（红色标注）</li>
+<li><strong>活动 ai 的时间余量 <span class="arithmatex">\(d(i) = l(i) - e(i)\)</span></strong>，表示在不增加完成整个工程所需总时间的情况下，活动 ai 可以拖延的时间</li>
+<li>若<span class="arithmatex">\(d(i) = 0\)</span> 即 <span class="arithmatex">\(l(i) = e(i)\)</span> 的活动 <strong><span class="arithmatex">\(a_i\)</span> 是关键活动</strong></li>
+<li>由关键活动组成的路径就是<strong>关键路径</strong></li>
+</ul>
+<p><img alt="" src="../../images/v2-e4554b9c09dc9ca62fc6f000e11d6101_r.jpg" /></p>
+<h4 id="_5">计算步骤<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p><strong>事件 <span class="arithmatex">\(v_k\)</span>​的最早发生时间 <span class="arithmatex">\(ve(k)\)</span></strong></p>
+<ul>
+<li><span class="arithmatex">\(ve(源点)=0\)</span></li>
+<li><span class="arithmatex">\(ve(k)=Max\{ve(j)+Weight(v_j,v_k\}\)</span></li>
+</ul>
+</li>
+<li>
+<p><strong>事件 <span class="arithmatex">\(v_k\)</span> ​的最迟发生时间 <span class="arithmatex">\(vl(k)\)</span></strong></p>
+<ul>
+<li><span class="arithmatex">\(vl(汇点)=ve(汇点)\)</span></li>
+<li><span class="arithmatex">\(vl(k)=Min\{vl(j)-Weight(v_k,v_j\}\)</span></li>
+</ul>
+</li>
+<li>
+<p><strong>活动 <span class="arithmatex">\(a_i\)</span> ​的最早开始时间 <span class="arithmatex">\(e(i)\)</span></strong></p>
+<ul>
+<li>它是指该活动弧的起点所表示的事件最早发生时间。</li>
+<li>若边 <span class="arithmatex">\(&lt;v_k,v_j&gt;\)</span>表示活动 <span class="arithmatex">\(a_i\)</span>​, 则有 <span class="arithmatex">\(e(i)=ve(k)\)</span></li>
+</ul>
+</li>
+<li>
+<p><strong>活动 <span class="arithmatex">\(a_i\)</span>​的最迟开始时间 <span class="arithmatex">\(l(i)\)</span></strong></p>
+<ul>
+<li>它是指该活动弧的终点所表示事件的最迟发生时间与该活动所需时间之差</li>
+<li>若边 <span class="arithmatex">\(&lt;v_k,v_j&gt;\)</span> 表示活动 <span class="arithmatex">\(a_i\)</span> ​, 则有<span class="arithmatex">\(l(i)=vl(j)-Weight(v_k,v_j)\)</span></li>
+</ul>
+</li>
+<li>
+<p><strong>求所有活动的时间余量 <span class="arithmatex">\(d(i)=l(i)-e(i)\)</span></strong>, <span class="arithmatex">\(d(i)=0\)</span>的活动 <span class="arithmatex">\(a_i\)</span>​是关键活动</p>
+</li>
+</ol>
+<p>案例：</p>
+<ol>
+<li>
+<p>求所有事件的最早发生时间 <span class="arithmatex">\(ve\)</span></p>
+<ul>
+<li>(1) 计算拓扑排序序列:
+    <img alt="" src="../../images/v2-9b359a8ba713ef6724fbe7bd1ae9831b_b.jpg" />
+     <span class="arithmatex">\(V_1、V_3、V_2、V_5、V_4、V_6\)</span></li>
+<li>(2) 按照序列计算最早发生时间<ul>
+<li><span class="arithmatex">\(ve(1) = 0\)</span></li>
+<li><span class="arithmatex">\(ve(3) = 2\)</span></li>
+<li><span class="arithmatex">\(ve(2) = 3\)</span></li>
+<li><span class="arithmatex">\(ve(5) = 6\)</span></li>
+<li><span class="arithmatex">\(ve(4) = Max\{ve(2) + 2, ve(3) + 4\}= 6\)</span></li>
+<li><span class="arithmatex">\(ve(6) = Max\{ve(5) + 1, ve(4) + 2, v(3) + 3\} = 8\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>求所有事件的最迟发生时间 <span class="arithmatex">\(vl\)</span></p>
+<ul>
+<li>(1) 计算逆拓扑排序序列：<span class="arithmatex">\(V_6、V_5、V_4、V_2、V_3、V_1\)</span></li>
+<li>(2) 按照序列计算最迟发生时间<ul>
+<li><span class="arithmatex">\(vl(6) = ve(6) = 8\)</span></li>
+<li><span class="arithmatex">\(vl(5) = vl(6) - 1 = 7\)</span></li>
+<li><span class="arithmatex">\(vl(4) = vl(6) - 2 = 6\)</span></li>
+<li><span class="arithmatex">\(vl(2) = Min\{vl(5) - 1, vl(4) - 2\} = 4\)</span></li>
+<li><span class="arithmatex">\(vl(3) = Min\{vl(4) - 4, vl(6) - 3\} = 2\)</span></li>
+<li><span class="arithmatex">\(vl(1) = Min\{vl(2) - 3, vl(3) - 2\} = 0\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>求所有活动的最早发生时间 <span class="arithmatex">\(e\)</span>
+<img alt="" src="../../images/v2-c54cf7ff92b9f11d7ec2e51a71dbec8d_r.jpg" />
+<img alt="" src="../../images/v2-322ac25afe334e110eb308ddf1e06474_b.jpg" />
+所有活动的最早发生时间, 若边 <span class="arithmatex">\(&lt;v_k,v_j&gt;\)</span>表示活动 <span class="arithmatex">\(a_i\)</span>​, 则有 <span class="arithmatex">\(e(i)=ve(k)\)</span>
+<img alt="" src="../../images/v2-3f86f48fe1ab2418f59aad6243a8b730_r.jpg" /></p>
+</li>
+<li>
+<p>求所有活动的最迟发生时间 <span class="arithmatex">\(l\)</span></p>
+<ul>
+<li>边 <span class="arithmatex">\(&lt;v_k,v_j&gt;\)</span> 表示活动 <span class="arithmatex">\(a_i\)</span> ​, 则有<span class="arithmatex">\(l(i)=vl(j)-Weight(v_k,v_j)\)</span></li>
+<li>得到以下结果：
+<img alt="" src="../../images/v2-34a4aea2c8200d80348406206ae42185_b.jpg" /></li>
+</ul>
+</li>
+<li>
+<p>求所有活动的时间余量:<span class="arithmatex">\(d(i) = l(i) - e(i)\)</span>, 得到：
+  <img alt="" src="../../images/v2-3d54ec435830e61271ea6256ce6e3a05_b.jpg" /></p>
+<ul>
+<li>关键活动：<span class="arithmatex">\(a_2、a_5、a_7\)</span></li>
+<li>关键路径：<span class="arithmatex">\(V_1 -&gt; V_3 -&gt; V_4 -&gt; V_6\)</span></li>
+</ul>
+</li>
+</ol>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../../04-%E6%A0%91/04.%E6%A0%91/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 4.树和二叉树" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              4.树和二叉树
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "header.shadow", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
